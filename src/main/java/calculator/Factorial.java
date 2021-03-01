@@ -1,7 +1,7 @@
-package searching;
+package calculator;
 
 public class Factorial {
-    int fac(int n) {
+    public int fac(int n) {
         if (n == 1) {
             return 1;
         }

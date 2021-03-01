@@ -1,5 +1,6 @@
-package searching;
+package searching.calculator;
 
+import calculator.Factorial;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
