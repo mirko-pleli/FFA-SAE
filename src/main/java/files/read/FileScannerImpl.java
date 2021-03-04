@@ -15,7 +15,7 @@ public class FileScannerImpl implements FileScanner {
      * @param path
      * @param fileData
      * @param search
-     * @return How many times the word to search was found, and the actual file length.
+     * @return How many times the word to search was found, and the actual file length with characters.
      */
     @Override
     public FileScannerResult search(String path, String search, boolean fileData) throws IOException {

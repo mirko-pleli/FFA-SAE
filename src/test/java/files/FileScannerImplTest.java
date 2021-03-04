@@ -28,5 +28,4 @@ class FileScannerImplTest {
         Assertions.assertEquals(fileScannerResultExpected.getCharacters(), fileScannerResultActual.getCharacters());
 
     }
-
 }
