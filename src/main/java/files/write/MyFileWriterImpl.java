@@ -13,7 +13,7 @@ public class MyFileWriterImpl implements MyFileWriter {
     private static final Logger LOG = LoggerFactory.getLogger(MyFileWriterImpl.class);
 
     @Override
-    public void write(final String fileName, ArrayList<String> lines, FileScannerResult scannerResult) {
+    public void write(final String fileName, final ArrayList<String> lines, final FileScannerResult scannerResult) {
         LOG.debug("--> write() fileName={}", fileName);
         try {
             FileWriter writer = new FileWriter("httpd-full_" + fileName + ".txt");

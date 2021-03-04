@@ -1,8 +1,6 @@
 package files.read;
 
-import java.io.Serializable;
-
-public class FileScannerResult implements Serializable {
+public class FileScannerResult {
 
     private int noOfLines;
 
@@ -31,6 +29,11 @@ public class FileScannerResult implements Serializable {
     }
 
     public void setNoOfSearchedIdentifier(int noOfSearchedIdentifier) {
+        this.noOfSearchedIdentifier = noOfSearchedIdentifier;
+    }
+    public FileScannerResult(int noOfLines, int characters, int noOfSearchedIdentifier) {
+        this.noOfLines = noOfLines;
+        this.characters = characters;
         this.noOfSearchedIdentifier = noOfSearchedIdentifier;
     }
 }

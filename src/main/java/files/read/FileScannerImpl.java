@@ -14,61 +14,36 @@ public class FileScannerImpl implements FileScanner {
     private static final Logger LOG = LoggerFactory.getLogger(FileScannerImpl.class);
 
     /**
-     * @param path
-     * @param fileData
-     * @param search
-     * @return How many times the word to search was found, and the actual file length with characters.
-     */
-    @Override
-    public FileScannerResult search(final String path, final String search, final boolean fileData)
-            throws IOException {
-        LOG.debug("--> search() path={}", path);
-        int noOfLines = 0, characters = 0, noOfSearchedIdentifier = 0;
-        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                if (isSearchedIdentifier(line, search)) {
-                    noOfSearchedIdentifier++;
-                }
-                characters += line.length();
-                noOfLines++;
-            }
-        }
-        LOG.debug("<-- search() path={}", path);
-        return fileScannerResult(fileData, noOfLines, characters, noOfSearchedIdentifier);
-    }
-
-    /**
-     * Create a file which contain the founded search line.
+     * Method which search in a file for an given word.
      *
-     * @param path
-     * @param search
-     * @param fileData
-     * @param writeSearch
-     * @return How many times the word to search was found, and the actual file length with characters.
+     * @param path The location of your file
+     * @param search Your search parameter
+     * @param writeSearchResults To save lines in a written file.
+     * @return FileScannerResult with information about number of lines, characters and your searched parameter.
      * @throws IOException
      */
     @Override
-    public FileScannerResult search(String path, String search, boolean fileData, boolean writeSearch) throws IOException {
-        LOG.debug("--> search() path={}", path);
-        int noOfLines = 0, characters = 0, noOfSearchedIdentifier = 0;
+    public FileScannerResult search(final String path, final String search, final boolean writeSearchResults) throws
+            IOException {
+        LOG.debug("--> search() path={}, search={}", path, search);
+        int noOfLines = 0, noOfCharacters = 0, noOfSearchedIdentifier = 0;
         ArrayList<String> lines = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 if (isSearchedIdentifier(line, search)) {
                     noOfSearchedIdentifier++;
-                    if (writeSearch) {
                         lines.add(line + "\r\n");
-                    }
                 }
-                characters += line.length();
+                noOfCharacters += line.length();
                 noOfLines++;
             }
         }
-        LOG.debug("<-- search() path={}", path);
-        FileScannerResult scannerResult = fileScannerResult(fileData, noOfLines, characters, noOfSearchedIdentifier);
-        writeResult(search, lines, scannerResult);
+        LOG.debug("<-- search() path={}, search={}", path, search);
+        FileScannerResult scannerResult = fileScannerResult(noOfLines, noOfCharacters, noOfSearchedIdentifier);
+        if (writeSearchResults) {
+            writeSearchResults(search, lines, scannerResult);
+        }
         return scannerResult;
     }
 
@@ -79,18 +54,14 @@ public class FileScannerImpl implements FileScanner {
         return false;
     }
 
-    private static FileScannerResult fileScannerResult(final boolean isFileDataNeeded, final int noOfLines, final int characters,
+    private static FileScannerResult fileScannerResult(final int noOfLines, final int noOfCharacters,
                                                        final int noOfSearchedIdentifier) {
-        FileScannerResult fileScannerResult = new FileScannerResult();
-        if (isFileDataNeeded) {
-            fileScannerResult.setNoOfLines(noOfLines);
-            fileScannerResult.setCharacters(characters);
-        }
-        fileScannerResult.setNoOfSearchedIdentifier(noOfSearchedIdentifier);
+        FileScannerResult fileScannerResult = new FileScannerResult(noOfLines, noOfCharacters, noOfSearchedIdentifier);
         return fileScannerResult;
     }
 
-    private static void writeResult(final String search, ArrayList<String> lines, final FileScannerResult scannerResult) {
+    private static void writeSearchResults(final String search, final ArrayList<String> lines,
+                                           final FileScannerResult scannerResult) {
         MyFileWriterImpl writer = new MyFileWriterImpl();
         writer.write(search, lines, scannerResult);
     }

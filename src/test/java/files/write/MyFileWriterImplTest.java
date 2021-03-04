@@ -13,6 +13,6 @@ class MyFileWriterImplTest {
         String path = "src/main/java/files/read/httpd-full.log";
         String searchedIdentifier = "Googlebot";
 
-        fileScanner.search(path, searchedIdentifier, true, true);
+        fileScanner.search(path, searchedIdentifier, true);
     }
 }
