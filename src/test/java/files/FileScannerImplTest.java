@@ -14,8 +14,8 @@ class FileScannerImplTest {
         FileScannerImpl fileScanner = new FileScannerImpl();
         FileScannerResult fileScannerResultExpected = new FileScannerResult();
 
-        String path = "src/main/java/files/httpd-full.log";
-        String searchedIdentifier = "Googlebot";
+        final String path = "src/main/java/files/read/httpd-full.log";
+        final String searchedIdentifier = "Googlebot";
 
         fileScannerResultExpected.setNoOfSearchedIdentifier(6);
         fileScannerResultExpected.setNoOfLines(117);
