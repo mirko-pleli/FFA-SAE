@@ -1,10 +1,10 @@
-package oop.ab9.Students;
+package oop.ab9.students;
 
-import oop.ab9.Building.ClassRoom;
-import oop.ab9.Enum.Employment;
-import oop.ab9.Enum.Grade;
-import oop.ab9.Enum.Occupation;
-import oop.ab9.Teacher.Teacher;
+import oop.ab9.building.ClassRoom;
+import oop.ab9.enums.Employment;
+import oop.ab9.enums.Grade;
+import oop.ab9.enums.Occupation;
+import oop.ab9.teacher.Teacher;
 
 import java.util.List;
 import java.util.UUID;

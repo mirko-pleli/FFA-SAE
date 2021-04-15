@@ -1,4 +1,4 @@
-package oop.ab9.Building;
+package oop.ab9.building;
 
 public class OfficeRoom {
 

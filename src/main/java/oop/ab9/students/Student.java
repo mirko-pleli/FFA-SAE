@@ -1,9 +1,9 @@
-package oop.ab9.Students;
+package oop.ab9.students;
 
-import oop.ab9.Enum.Grade;
-import oop.ab9.Grading.BehavioralNote;
-import oop.ab9.Grading.SchoolNote;
-import oop.ab9.Grading.Subject;
+import oop.ab9.enums.Grade;
+import oop.ab9.grading.BehavioralNote;
+import oop.ab9.grading.SchoolNote;
+import oop.ab9.grading.Subject;
 
 import java.sql.Timestamp;
 import java.util.Date;

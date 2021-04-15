@@ -1,4 +1,4 @@
-package oop.ab9.Grading;
+package oop.ab9.grading;
 
 public class Subject {
 
