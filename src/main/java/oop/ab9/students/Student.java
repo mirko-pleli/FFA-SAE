@@ -1,16 +1,17 @@
 package oop.ab9.students;
 
+import oop.ab9.Basic.Person;
 import oop.ab9.enums.Grade;
 import oop.ab9.grading.BehavioralNote;
 import oop.ab9.grading.SchoolNote;
 import oop.ab9.grading.Subject;
 
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
-public class Student {
+public class Student extends Person {
 
     private UUID id;
 
@@ -34,7 +35,7 @@ public class Student {
 
     private Grade grade;
 
-    private Date birthday;
+    private LocalDate birthday;
 
     private String parentalAuthority;
 
@@ -43,6 +44,10 @@ public class Student {
     private Timestamp created;
 
     private Timestamp updated;
+
+    private boolean isEquals(int teachersMonth, int teachersDay, int todayMonth, int todayDay) {
+        return todayMonth == teachersMonth && todayDay == teachersDay;
+    }
 
     public UUID getId() {
         return id;
@@ -132,11 +137,11 @@ public class Student {
         this.grade = grade;
     }
 
-    public Date getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
 

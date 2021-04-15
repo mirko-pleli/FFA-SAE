@@ -1,5 +1,6 @@
 package oop.ab9.teacher;
 
+import oop.ab9.Basic.Person;
 import oop.ab9.building.ClassRoom;
 import oop.ab9.building.OfficeRoom;
 import oop.ab9.enums.Deputate;
@@ -8,10 +9,11 @@ import oop.ab9.enums.Skill;
 import oop.ab9.grading.Subject;
 import oop.ab9.students.SchoolClass;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
-public class Teacher {
+public class Teacher extends Person {
 
     private UUID id;
 
@@ -20,6 +22,8 @@ public class Teacher {
     private String firstName;
 
     private String lastName;
+
+    private LocalDate birthday;
 
     private List<Subject> subjects;
 
@@ -69,6 +73,14 @@ public class Teacher {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
     }
 
     public List<Subject> getSubjects() {
