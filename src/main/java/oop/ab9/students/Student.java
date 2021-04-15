@@ -45,10 +45,6 @@ public class Student extends Person {
 
     private Timestamp updated;
 
-    private static boolean isEquals(final int teachersMonth, final int teachersDay, final int todayMonth, final int todayDay) {
-        return todayMonth == teachersMonth && todayDay == teachersDay;
-    }
-
     public UUID getId() {
         return id;
     }
