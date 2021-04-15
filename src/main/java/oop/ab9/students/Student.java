@@ -1,6 +1,6 @@
 package oop.ab9.students;
 
-import oop.ab9.Basic.Person;
+import oop.ab9.basic.Person;
 import oop.ab9.enums.Grade;
 import oop.ab9.grading.BehavioralNote;
 import oop.ab9.grading.SchoolNote;
@@ -45,7 +45,7 @@ public class Student extends Person {
 
     private Timestamp updated;
 
-    private boolean isEquals(int teachersMonth, int teachersDay, int todayMonth, int todayDay) {
+    private static boolean isEquals(final int teachersMonth, final int teachersDay, final int todayMonth, final int todayDay) {
         return todayMonth == teachersMonth && todayDay == teachersDay;
     }
 
@@ -53,7 +53,7 @@ public class Student extends Person {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(final UUID id) {
         this.id = id;
     }
 
@@ -61,7 +61,7 @@ public class Student extends Person {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(final String firstName) {
         this.firstName = firstName;
     }
 
@@ -69,7 +69,7 @@ public class Student extends Person {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(final String lastName) {
         this.lastName = lastName;
     }
 
@@ -77,7 +77,7 @@ public class Student extends Person {
         return schoolClass;
     }
 
-    public void setSchoolClass(SchoolClass schoolClass) {
+    public void setSchoolClass(final SchoolClass schoolClass) {
         this.schoolClass = schoolClass;
     }
 
@@ -85,7 +85,7 @@ public class Student extends Person {
         return company;
     }
 
-    public void setCompany(Company company) {
+    public void setCompany(final Company company) {
         this.company = company;
     }
 
@@ -93,7 +93,7 @@ public class Student extends Person {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(final String email) {
         this.email = email;
     }
 
@@ -101,7 +101,7 @@ public class Student extends Person {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(final String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -109,7 +109,7 @@ public class Student extends Person {
         return notes;
     }
 
-    public void setNotes(List<SchoolNote> notes) {
+    public void setNotes(final List<SchoolNote> notes) {
         this.notes = notes;
     }
 
@@ -117,7 +117,7 @@ public class Student extends Person {
         return behavioralNotes;
     }
 
-    public void setBehavioralNotes(List<BehavioralNote> behavioralNotes) {
+    public void setBehavioralNotes(final List<BehavioralNote> behavioralNotes) {
         this.behavioralNotes = behavioralNotes;
     }
 
@@ -125,7 +125,7 @@ public class Student extends Person {
         return subjects;
     }
 
-    public void setSubjects(List<Subject> subjects) {
+    public void setSubjects(final List<Subject> subjects) {
         this.subjects = subjects;
     }
 
@@ -133,7 +133,7 @@ public class Student extends Person {
         return grade;
     }
 
-    public void setGrade(Grade grade) {
+    public void setGrade(final Grade grade) {
         this.grade = grade;
     }
 
@@ -141,7 +141,7 @@ public class Student extends Person {
         return birthday;
     }
 
-    public void setBirthday(LocalDate birthday) {
+    public void setBirthday(final LocalDate birthday) {
         this.birthday = birthday;
     }
 
@@ -149,7 +149,7 @@ public class Student extends Person {
         return parentalAuthority;
     }
 
-    public void setParentalAuthority(String parentalAuthority) {
+    public void setParentalAuthority(final String parentalAuthority) {
         this.parentalAuthority = parentalAuthority;
     }
 
@@ -157,7 +157,7 @@ public class Student extends Person {
         return emergencyContacts;
     }
 
-    public void setEmergencyContacts(List<String> emergencyContacts) {
+    public void setEmergencyContacts(final List<String> emergencyContacts) {
         this.emergencyContacts = emergencyContacts;
     }
 
@@ -165,7 +165,7 @@ public class Student extends Person {
         return created;
     }
 
-    public void setCreated(Timestamp created) {
+    public void setCreated(final Timestamp created) {
         this.created = created;
     }
 
@@ -173,7 +173,7 @@ public class Student extends Person {
         return updated;
     }
 
-    public void setUpdated(Timestamp updated) {
+    public void setUpdated(final Timestamp updated) {
         this.updated = updated;
     }
 }

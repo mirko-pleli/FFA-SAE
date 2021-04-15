@@ -1,6 +1,6 @@
 package oop.ab9.teacher;
 
-import oop.ab9.Basic.Person;
+import oop.ab9.basic.Person;
 import oop.ab9.building.ClassRoom;
 import oop.ab9.building.OfficeRoom;
 import oop.ab9.enums.Deputate;
@@ -47,7 +47,7 @@ public class Teacher extends Person {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(final UUID id) {
         this.id = id;
     }
 
@@ -55,7 +55,7 @@ public class Teacher extends Person {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(final String code) {
         this.code = code;
     }
 
@@ -63,7 +63,7 @@ public class Teacher extends Person {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(final String firstName) {
         this.firstName = firstName;
     }
 
@@ -71,7 +71,7 @@ public class Teacher extends Person {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(final String lastName) {
         this.lastName = lastName;
     }
 
@@ -79,7 +79,7 @@ public class Teacher extends Person {
         return birthday;
     }
 
-    public void setBirthday(LocalDate birthday) {
+    public void setBirthday(final LocalDate birthday) {
         this.birthday = birthday;
     }
 
@@ -87,7 +87,7 @@ public class Teacher extends Person {
         return subjects;
     }
 
-    public void setSubjects(List<Subject> subjects) {
+    public void setSubjects(final List<Subject> subjects) {
         this.subjects = subjects;
     }
 
@@ -95,7 +95,7 @@ public class Teacher extends Person {
         return contactData;
     }
 
-    public void setContactData(ContactData contactData) {
+    public void setContactData(final ContactData contactData) {
         this.contactData = contactData;
     }
 
@@ -103,7 +103,7 @@ public class Teacher extends Person {
         return classes;
     }
 
-    public void setClasses(List<SchoolClass> classes) {
+    public void setClasses(final List<SchoolClass> classes) {
         this.classes = classes;
     }
 
@@ -111,7 +111,7 @@ public class Teacher extends Person {
         return assignments;
     }
 
-    public void setAssignments(List<Assignment> assignments) {
+    public void setAssignments(final List<Assignment> assignments) {
         this.assignments = assignments;
     }
 
@@ -119,7 +119,7 @@ public class Teacher extends Person {
         return officeRoom;
     }
 
-    public void setOfficeRoom(OfficeRoom officeRoom) {
+    public void setOfficeRoom(final OfficeRoom officeRoom) {
         this.officeRoom = officeRoom;
     }
 
@@ -127,7 +127,7 @@ public class Teacher extends Person {
         return roomAttendant;
     }
 
-    public void setRoomAttendant(ClassRoom roomAttendant) {
+    public void setRoomAttendant(final ClassRoom roomAttendant) {
         this.roomAttendant = roomAttendant;
     }
 
@@ -135,7 +135,7 @@ public class Teacher extends Person {
         return position;
     }
 
-    public void setPosition(Position position) {
+    public void setPosition(final Position position) {
         this.position = position;
     }
 
@@ -143,7 +143,7 @@ public class Teacher extends Person {
         return deputate;
     }
 
-    public void setDeputate(Deputate deputate) {
+    public void setDeputate(final Deputate deputate) {
         this.deputate = deputate;
     }
 
@@ -151,7 +151,7 @@ public class Teacher extends Person {
         return skills;
     }
 
-    public void setSkills(List<Skill> skills) {
+    public void setSkills(final List<Skill> skills) {
         this.skills = skills;
     }
 }
