@@ -15,9 +15,11 @@ public class Person {
 
     public static boolean hasBirthday(final Person person) {
         final LocalDate today = LocalDate.now();
+        final LocalDate personBirthday = person.getBirthday();
 
-        final int personMonth = person.getBirthday().getMonthValue();
-        final int personDay = person.getBirthday().getDayOfMonth();
+        final int personMonth = personBirthday.getMonthValue();
+        final int personDay = personBirthday.getDayOfMonth();
+
         final int todayMonth = today.getMonthValue();
         final int todayDay = today.getDayOfMonth();
 
