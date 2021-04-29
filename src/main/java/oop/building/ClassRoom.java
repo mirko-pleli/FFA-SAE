@@ -1,4 +1,4 @@
-package oop.ab9.building;
+package oop.building;
 
 public class ClassRoom {
 

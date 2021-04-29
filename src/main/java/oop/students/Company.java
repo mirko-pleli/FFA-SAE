@@ -1,4 +1,4 @@
-package oop.ab9.students;
+package oop.students;
 
 public class Company {
 

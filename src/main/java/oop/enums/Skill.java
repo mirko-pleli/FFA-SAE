@@ -1,4 +1,4 @@
-package oop.ab9.enums;
+package oop.enums;
 
 public enum Skill {
 }

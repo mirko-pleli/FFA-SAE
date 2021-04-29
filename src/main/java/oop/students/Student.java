@@ -1,10 +1,10 @@
-package oop.ab9.students;
+package oop.students;
 
-import oop.ab9.basic.Person;
-import oop.ab9.enums.Grade;
-import oop.ab9.grading.BehavioralNote;
-import oop.ab9.grading.SchoolNote;
-import oop.ab9.grading.Subject;
+import oop.basic.Person;
+import oop.enums.Grade;
+import oop.grading.BehavioralNote;
+import oop.grading.SchoolNote;
+import oop.grading.Subject;
 
 import java.sql.Timestamp;
 import java.util.List;

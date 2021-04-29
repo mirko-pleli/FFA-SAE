@@ -1,4 +1,4 @@
-package oop.ab9.enums;
+package oop.enums;
 
 public enum Employment {
     PART_TIME, FULL_TIME

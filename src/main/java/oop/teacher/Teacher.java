@@ -1,13 +1,13 @@
-package oop.ab9.teacher;
+package oop.teacher;
 
-import oop.ab9.basic.Person;
-import oop.ab9.building.ClassRoom;
-import oop.ab9.building.OfficeRoom;
-import oop.ab9.enums.Deputate;
-import oop.ab9.enums.Position;
-import oop.ab9.enums.Skill;
-import oop.ab9.grading.Subject;
-import oop.ab9.students.SchoolClass;
+import oop.basic.Person;
+import oop.building.ClassRoom;
+import oop.building.OfficeRoom;
+import oop.enums.Deputate;
+import oop.enums.Position;
+import oop.enums.Skill;
+import oop.grading.Subject;
+import oop.students.SchoolClass;
 import org.apache.commons.validator.routines.EmailValidator;
 
 import java.util.List;

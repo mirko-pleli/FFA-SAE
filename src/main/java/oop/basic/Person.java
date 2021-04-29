@@ -1,4 +1,4 @@
-package oop.ab9.basic;
+package oop.basic;
 
 import java.time.LocalDate;
 import java.util.UUID;

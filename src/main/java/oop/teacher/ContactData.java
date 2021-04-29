@@ -1,4 +1,4 @@
-package oop.ab9.teacher;
+package oop.teacher;
 
 public class ContactData {
 

@@ -1,4 +1,4 @@
-package oop.ab9.grading;
+package oop.grading;
 
 public class BehavioralNote {
 

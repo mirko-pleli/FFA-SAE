@@ -1,4 +1,4 @@
-package oop.ab9.farm;
+package oop.farm;
 
 import java.time.LocalDate;
 
@@ -12,16 +12,19 @@ public class Cow {
 
     private int hayAmount;
 
+    private double waterAmount;
+
     private static final int HAY_AMOUNT_FOR_MILK = 5;
 
-    private static final double AMOUNT_FOR_MILK = 7.5;
+    private static final double WATER_AMOUNT_FOR_MILK = 7.5;
 
     public double returnMilk(final Cow cow) {
         if (cow.getHayAmount() == HAY_AMOUNT_FOR_MILK) {
-            return AMOUNT_FOR_MILK;
-        } else {
-            return 0.0;
+            if (cow.getWaterAmount() == WATER_AMOUNT_FOR_MILK) {
+                return 7.5;
+            }
         }
+        return 0.0;
     }
 
     public String getName() {
@@ -46,13 +49,12 @@ public class Cow {
         return birthYear;
     }
 
-    public void setBirthYear(LocalDate birthYear) {
+    public boolean setBirthYear(LocalDate birthYear) {
         final LocalDate today = LocalDate.now();
-        if (!today.isAfter(birthYear)) {
-            if (!birthYear.isBefore(today.minusYears(25L))) {
-                this.birthYear = birthYear;
-            }
+        if (birthYear.isBefore(today.minusYears(25L))) {
+            return false;
         }
+        return true;
     }
 
     public int getHayAmount() {
@@ -63,6 +65,13 @@ public class Cow {
         this.hayAmount = hayAmount;
     }
 
+    public double getWaterAmount() {
+        return waterAmount;
+    }
+
+    public void setWaterAmount(double waterAmount) {
+        this.waterAmount = waterAmount;
+    }
 
     @Override
     public String toString() {
