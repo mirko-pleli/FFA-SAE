@@ -8,10 +8,13 @@ import oop.ab9.enums.Position;
 import oop.ab9.enums.Skill;
 import oop.ab9.grading.Subject;
 import oop.ab9.students.SchoolClass;
+import org.apache.commons.validator.routines.EmailValidator;
 
 import java.util.List;
 
 public class Teacher extends Person {
+
+    private String email;
 
     private List<Subject> subjects;
 
@@ -30,6 +33,17 @@ public class Teacher extends Person {
     private Deputate deputate;
 
     private List<Skill> skills;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        boolean isValid = EmailValidator.getInstance().isValid(email);
+        if(isValid) {
+            this.email = email;
+        }
+    }
 
     public List<Subject> getSubjects() {
         return subjects;

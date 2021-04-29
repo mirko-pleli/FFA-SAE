@@ -15,8 +15,6 @@ public class Student extends Person {
 
     private Company company;
 
-    private String email;
-
     private String phoneNumber;
 
     private List<SchoolNote> notes;
@@ -49,14 +47,6 @@ public class Student extends Person {
 
     public void setCompany(final Company company) {
         this.company = company;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(final String email) {
-        this.email = email;
     }
 
     public String getPhoneNumber() {
