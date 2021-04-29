@@ -9,21 +9,9 @@ import oop.ab9.enums.Skill;
 import oop.ab9.grading.Subject;
 import oop.ab9.students.SchoolClass;
 
-import java.time.LocalDate;
 import java.util.List;
-import java.util.UUID;
 
 public class Teacher extends Person {
-
-    private UUID id;
-
-    private String code;
-
-    private String firstName;
-
-    private String lastName;
-
-    private LocalDate birthday;
 
     private List<Subject> subjects;
 
@@ -42,46 +30,6 @@ public class Teacher extends Person {
     private Deputate deputate;
 
     private List<Skill> skills;
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(final UUID id) {
-        this.id = id;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(final String code) {
-        this.code = code;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(final String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(final String lastName) {
-        this.lastName = lastName;
-    }
-
-    public LocalDate getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(final LocalDate birthday) {
-        this.birthday = birthday;
-    }
 
     public List<Subject> getSubjects() {
         return subjects;

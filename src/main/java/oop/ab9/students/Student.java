@@ -7,17 +7,9 @@ import oop.ab9.grading.SchoolNote;
 import oop.ab9.grading.Subject;
 
 import java.sql.Timestamp;
-import java.time.LocalDate;
 import java.util.List;
-import java.util.UUID;
 
 public class Student extends Person {
-
-    private UUID id;
-
-    private String firstName;
-
-    private String lastName;
 
     private SchoolClass schoolClass;
 
@@ -35,8 +27,6 @@ public class Student extends Person {
 
     private Grade grade;
 
-    private LocalDate birthday;
-
     private String parentalAuthority;
 
     private List<String> emergencyContacts;
@@ -44,30 +34,6 @@ public class Student extends Person {
     private Timestamp created;
 
     private Timestamp updated;
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(final UUID id) {
-        this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(final String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(final String lastName) {
-        this.lastName = lastName;
-    }
 
     public SchoolClass getSchoolClass() {
         return schoolClass;
@@ -131,14 +97,6 @@ public class Student extends Person {
 
     public void setGrade(final Grade grade) {
         this.grade = grade;
-    }
-
-    public LocalDate getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(final LocalDate birthday) {
-        this.birthday = birthday;
     }
 
     public String getParentalAuthority() {

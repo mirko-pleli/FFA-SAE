@@ -37,10 +37,6 @@ public class Person {
         return id;
     }
 
-    public void setId(final UUID id) {
-        this.id = id;
-    }
-
     public String getFirstName() {
         return firstName;
     }
