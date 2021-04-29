@@ -12,6 +12,18 @@ public class Cow {
 
     private int hayAmount;
 
+    private static final int HAY_AMOUNT_FOR_MILK = 5;
+
+    private static final double AMOUNT_FOR_MILK = 7.5;
+
+    public double returnMilk(final Cow cow) {
+        if (cow.getHayAmount() == HAY_AMOUNT_FOR_MILK) {
+            return AMOUNT_FOR_MILK;
+        } else {
+            return 0.0;
+        }
+    }
+
     public String getName() {
         return name;
     }
@@ -36,8 +48,10 @@ public class Cow {
 
     public void setBirthYear(LocalDate birthYear) {
         final LocalDate today = LocalDate.now();
-        if (today.isEqual(birthYear.minusYears(25L))) {
-            this.birthYear = birthYear;
+        if (!today.isAfter(birthYear)) {
+            if (!birthYear.isBefore(today.minusYears(25L))) {
+                this.birthYear = birthYear;
+            }
         }
     }
 
@@ -48,6 +62,7 @@ public class Cow {
     public void setHayAmount(int hayAmount) {
         this.hayAmount = hayAmount;
     }
+
 
     @Override
     public String toString() {
