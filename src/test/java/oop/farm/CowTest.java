@@ -12,7 +12,7 @@ class CowTest {
         Cow cow = new Cow();
         cow.setWaterAmount(7.5);
         cow.setHayAmount(5);
-        double expectedMilk = cow.returnMilk(cow);
+        double expectedMilk = cow.returnProducedMilk(cow);
 
         Assertions.assertEquals(0.5, expectedMilk);
     }
@@ -22,7 +22,7 @@ class CowTest {
         Cow cow = new Cow();
         cow.setWaterAmount(15);
         cow.setHayAmount(10);
-        double expectedMilk = cow.returnMilk(cow);
+        double expectedMilk = cow.returnProducedMilk(cow);
 
         Assertions.assertEquals(1.0, expectedMilk);
     }
@@ -34,7 +34,7 @@ class CowTest {
                     Cow cow = new Cow();
                     cow.setWaterAmount(7);
                     cow.setHayAmount(4);
-                    cow.returnMilk(cow);
+                    cow.returnProducedMilk(cow);
                 });
     }
 

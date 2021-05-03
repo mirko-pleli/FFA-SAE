@@ -18,29 +18,14 @@ public class Cow {
 
     private static final double MINIMUM_WATER_AMOUNT = 7.5;
 
-    // HALF LITER MILK
+    // RATIO FOR AN HALF LITER MILK
     private static final double RATIO_FOR_MILK_AMOUNT = 25;
 
-    public double returnMilk(final Cow cow) {
-        if (isCowFedCorrectly(cow)) {
+    public double returnProducedMilk(final Cow cow) {
+        if (minimalNutritionAmount(cow)) {
             return calculateMilkAmount(cow);
         }
         throw new IllegalArgumentException("The nutrition amount is for milk production too low.");
-    }
-
-    private static double calculateMilkAmount(final Cow cow) {
-        final double FOOD_AMOUNT = cow.getWaterAmount() + cow.getHayAmount();
-        final double MILK_AMOUNT = FOOD_AMOUNT / RATIO_FOR_MILK_AMOUNT;
-        return MILK_AMOUNT;
-    }
-
-    private static boolean isCowFedCorrectly(final Cow cow) {
-        if (cow.getWaterAmount() >= MINIMUM_WATER_AMOUNT) {
-            if (cow.getHayAmount() >= MINIMUM_HAY_AMOUNT) {
-                return true;
-            }
-        }
-        return false;
     }
 
     public String getName() {
@@ -65,7 +50,7 @@ public class Cow {
         return birthYear;
     }
 
-    public boolean setBirthYear(LocalDate birthYear) {
+    public boolean setBirthYear(final LocalDate birthYear) {
         final LocalDate today = LocalDate.now();
         if (birthYear.isBefore(today.minusYears(25L))) {
             return false;
@@ -98,4 +83,20 @@ public class Cow {
                 ", hayAmount=" + hayAmount +
                 '}';
     }
+
+    private static boolean minimalNutritionAmount(final Cow cow) {
+        if (cow.getWaterAmount() >= MINIMUM_WATER_AMOUNT) {
+            if (cow.getHayAmount() >= MINIMUM_HAY_AMOUNT) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static double calculateMilkAmount(final Cow cow) {
+        final double FOOD_AMOUNT = cow.getWaterAmount() + cow.getHayAmount();
+        final double MILK_AMOUNT = FOOD_AMOUNT / RATIO_FOR_MILK_AMOUNT;
+        return MILK_AMOUNT;
+    }
+
 }
