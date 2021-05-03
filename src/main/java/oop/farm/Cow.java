@@ -14,17 +14,33 @@ public class Cow {
 
     private double waterAmount;
 
-    private static final int HAY_AMOUNT_FOR_MILK = 5;
+    private static final int MINIMUM_HAY_AMOUNT = 5;
 
-    private static final double WATER_AMOUNT_FOR_MILK = 7.5;
+    private static final double MINIMUM_WATER_AMOUNT = 7.5;
+
+    // HALF LITER MILK
+    private static final double RATIO_FOR_MILK_AMOUNT = 25;
 
     public double returnMilk(final Cow cow) {
-        if (cow.getHayAmount() == HAY_AMOUNT_FOR_MILK) {
-            if (cow.getWaterAmount() == WATER_AMOUNT_FOR_MILK) {
-                return 7.5;
+        if (isCowFedCorrectly(cow)) {
+            return calculateMilkAmount(cow);
+        }
+        throw new IllegalArgumentException("The nutrition amount is for milk production too low.");
+    }
+
+    private static double calculateMilkAmount(final Cow cow) {
+        final double FOOD_AMOUNT = cow.getWaterAmount() + cow.getHayAmount();
+        final double MILK_AMOUNT = FOOD_AMOUNT / RATIO_FOR_MILK_AMOUNT;
+        return MILK_AMOUNT;
+    }
+
+    private static boolean isCowFedCorrectly(final Cow cow) {
+        if (cow.getWaterAmount() >= MINIMUM_WATER_AMOUNT) {
+            if (cow.getHayAmount() >= MINIMUM_HAY_AMOUNT) {
+                return true;
             }
         }
-        return 0.0;
+        return false;
     }
 
     public String getName() {
