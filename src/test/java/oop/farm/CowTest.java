@@ -55,4 +55,12 @@ class CowTest {
 
         Assertions.assertFalse(birthYear);
     }
+
+    @Test
+    void calv() {
+        Cow motherCow = new Cow("Mama Kuh", 35, 2005);
+        Cow babyCow = motherCow.calv(motherCow);
+
+        Assertions.assertEquals(motherCow.getName(), babyCow.getMotherCow().getName());
+    }
 }

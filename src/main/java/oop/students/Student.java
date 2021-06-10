@@ -25,6 +25,8 @@ public class Student extends Person {
 
     private Grade grade;
 
+    private static String schoolUniform;
+
     private String parentalAuthority;
 
     private List<String> emergencyContacts;
@@ -87,6 +89,14 @@ public class Student extends Person {
 
     public void setGrade(final Grade grade) {
         this.grade = grade;
+    }
+
+    public static String getSchoolUniform() {
+        return schoolUniform;
+    }
+
+    public static void setSchoolUniform(String schoolUniform) {
+        Student.schoolUniform = schoolUniform;
     }
 
     public String getParentalAuthority() {

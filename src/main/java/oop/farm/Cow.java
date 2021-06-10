@@ -8,7 +8,9 @@ public class Cow {
 
     private int weight;
 
-    private LocalDate birthYear;
+    private LocalDate birthday;
+
+    private int birthYear;
 
     private int hayAmount;
 
@@ -18,14 +20,35 @@ public class Cow {
 
     private static final double MINIMUM_WATER_AMOUNT = 7.5;
 
-    // RATIO FOR AN HALF LITER MILK
     private static final double RATIO_FOR_MILK_AMOUNT = 25;
+
+    private Cow motherCow;
+
+    public Cow() {
+        this.name = "Unknown";
+        this.weight = 35;
+        this.birthYear = LocalDate.now().getYear();
+    }
+
+    public Cow(String name, int weight, int birthYear) {
+        this.name = name;
+        this.weight = weight;
+        this.birthYear = birthYear;
+    }
+
+    public Cow(Cow motherCow) {
+        this.motherCow = motherCow;
+    }
 
     public double returnProducedMilk(final Cow cow) {
         if (minimalNutritionAmount(cow)) {
             return calculateMilkAmount(cow);
         }
         throw new IllegalArgumentException("The nutrition amount is for milk production too low.");
+    }
+
+    public Cow calv(Cow motherCow) {
+        return new Cow(motherCow);
     }
 
     public String getName() {
@@ -46,7 +69,15 @@ public class Cow {
         }
     }
 
-    public LocalDate getBirthYear() {
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
+    }
+
+    public int getBirthYear() {
         return birthYear;
     }
 
@@ -74,14 +105,8 @@ public class Cow {
         this.waterAmount = waterAmount;
     }
 
-    @Override
-    public String toString() {
-        return "Cow{" +
-                "name='" + name + '\'' +
-                ", weight=" + weight +
-                ", birthYear=" + birthYear +
-                ", hayAmount=" + hayAmount +
-                '}';
+    public Cow getMotherCow() {
+        return motherCow;
     }
 
     private static boolean minimalNutritionAmount(final Cow cow) {
@@ -99,4 +124,16 @@ public class Cow {
         return MILK_AMOUNT;
     }
 
+    @Override
+    public String toString() {
+        return "Cow{" +
+                "name='" + name + '\'' +
+                ", weight=" + weight +
+                ", birthday=" + birthday +
+                ", birthYear=" + birthYear +
+                ", hayAmount=" + hayAmount +
+                ", waterAmount=" + waterAmount +
+                ", motherCow=" + motherCow +
+                '}';
+    }
 }
